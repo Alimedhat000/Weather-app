@@ -13,24 +13,41 @@
 <body>
     <div class="container">
         <div class="search">
-            Search
+            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.6725 15.1412L20 19.5M18 9.5C18 13.9183 14.4183 17.5 10 17.5C5.58172 17.5 2 13.9183 2 9.5C2 5.08172 5.58172 1.5 10 1.5C14.4183 1.5 18 5.08172 18 9.5Z"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input type="text" placeholder="Search City..." id="search-input">
+
         </div>
         <div class="side-bar">Side</div>
         <div class="main-weather">
             <div class="left">
-                <div class="country">Egypt</div>
+                <div class="country"><svg width="15" height="20" viewBox="0 0 15 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.5 5.625C6.46437 5.625 5.625 6.46437 5.625 7.5C5.625 8.53562 6.46437 9.375 7.5 9.375C8.53562 9.375 9.375 8.53562 9.375 7.5C9.375 6.46437 8.53562 5.625 7.5 5.625ZM7.5 10.625C5.77437 10.625 4.375 9.22625 4.375 7.5C4.375 5.77375 5.77437 4.375 7.5 4.375C9.22562 4.375 10.625 5.77375 10.625 7.5C10.625 9.22625 9.22562 10.625 7.5 10.625ZM7.5 0C3.35812 0 0 3.35812 0 7.5C0 10.6362 6.25312 20.0069 7.5 20C8.7275 20.0069 15 10.5937 15 7.5C15 3.35812 11.6419 0 7.5 0Z"
+                            fill="white" />
+                    </svg>
+                    Egypt</div>
                 <div class="today-date">
                     <div class="week-day">Monday</div>
                     <div class="date">24 Dec, 2023</div>
                 </div>
                 <div class="today-weather">
-                    <div class="temperature">26C</div>
+                    <div class="temperature">
+                        <span class="temperature-number">26</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8" r="6.5" stroke="white" stroke-width="3" />
+                        </svg>
+                        <span class="temperature-unit">C</span>
+                    </div>
                     <div class="temperature-description">High:27 Low:10</div>
                 </div>
             </div>
             <div class="right">
-                <div class="F-C-switch"></div>
-                <!-- <img id="big-weather-img" src="assets/imgs/Night Clouds.png" alt=""> -->
+                <img id="big-weather-img" src="assets/imgs/Night Clouds.png" alt="">
                 <div class="weather-description">
                     <div class="weather-title">Cloudy</div>
                     <div class="weather-feels-like"> Feels Like 26</div>

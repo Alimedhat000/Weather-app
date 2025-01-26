@@ -1,35 +1,41 @@
 @import "./reset.css";
 @import "./variables.css";
-
+@import "./main-weather.css";
 body {
   background-color: var(--primary-color);
   color: var(--white);
+  font-family: var(--font-inter), sans-serif;
   min-height: 100vh;
   margin: 0;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .container {
   display: grid;
-  min-height: calc(100vh - 2rem);
-  padding: 0;
+  min-height: calc(100vh - 3rem);
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto;
-
-  gap: 30px;
+  gap: 25px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .container > div {
   background-color: var(--secondary-color);
   color: var(--white);
-  border: 1px solid var(--dark-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 25px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
   width: 100%;
   min-height: 0;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .search {
@@ -53,119 +59,6 @@ body {
 .other-cities {
   grid-area: 10 / 7 / 16 / 11;
 }
-
-.main-weather {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1e2233; /* Dark background color */
-  color: #ffffff; /* White text */
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-.main-weather .left,
-.main-weather .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.main-weather .left {
-  gap: 10px;
-}
-
-.main-weather .country {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #c5a6ff; /* Purple for the country name */
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.main-weather .today-date {
-  color: #a3b4cc;
-}
-
-.main-weather .week-day {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.main-weather .date {
-  font-size: 1rem;
-}
-
-.main-weather .today-weather {
-  margin-top: 10px;
-}
-
-.main-weather .temperature {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.main-weather .temperature-description {
-  font-size: 0.9rem;
-  color: #a3b4cc;
-}
-
-.main-weather .right {
-  align-items: center;
-  gap: 10px;
-}
-
-.main-weather .F-C-switch {
-  width: 50px;
-  height: 25px;
-  background: linear-gradient(90deg, #4e5c6c 50%, #ffffff 50%);
-  border-radius: 25px;
-  position: relative;
-  cursor: pointer;
-}
-
-.main-weather .F-C-switch::before {
-  content: "F";
-  position: absolute;
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  color: #fff;
-}
-
-.main-weather .F-C-switch::after {
-  content: "C";
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  color: #4e5c6c;
-}
-
-#big-weather-img {
-  width: 80px;
-  height: 80px;
-}
-
-.main-weather .weather-description {
-  text-align: center;
-  color: #a3b4cc;
-}
-
-.main-weather .weather-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.main-weather .weather-feels-like {
-  font-size: 0.9rem;
-}
-
-/* Responsive Design */
 
 @media (max-width: 1024px) {
   .container {
@@ -191,61 +84,12 @@ body {
   .other-cities {
     grid-area: 10 / 4 / 14 / 7;
   }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 0.5rem;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
-    padding-bottom: 70px; /* Add space for fixed sidebar */
-  }
-
-  .search,
-  .main-weather,
-  .today-highlights,
-  .week-weather,
-  .other-cities {
-    grid-column: 1 / -1;
-    min-height: auto;
-    padding: 15px;
-  }
-
-  .main-weather {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .main-weather .left,
-  .main-weather .right {
-    align-items: center;
-    width: 100%;
-  }
 
   .main-weather .temperature {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
-  #big-weather-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .side-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: var(--secondary-color);
-    border-radius: 0;
-    border-top: 1px solid var(--dark-color);
-    margin: 0;
-    z-index: 1000;
+  .main-weather .week-day {
+    font-size: 1.75rem;
   }
 }
