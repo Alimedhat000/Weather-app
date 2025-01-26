@@ -5,14 +5,15 @@
 @import "./user.css";
 @import "./week-weather.css";
 @import "./today-highlights.css";
+@import "./other-cities.css";
 
 body {
   background-color: var(--primary-color);
   color: var(--white);
   font-family: var(--font-inter), sans-serif;
-  min-height: 100vh;
   margin: 0;
   padding: 1.5rem;
+  padding-bottom: 0;
 }
 
 .container {
@@ -25,7 +26,7 @@ body {
   margin: 0 auto;
 }
 
-.container > div {
+.container > div:not(.other-cities) {
   background-color: var(--secondary-color);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -38,7 +39,7 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.container > div:hover {
+.container > div:hover:not(.other-cities) {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -55,7 +56,7 @@ body {
 }
 
 .week-weather {
-  grid-area: 8 / 1 / 16 / 7;
+  grid-area: 8 / 1 / 10 / 7;
 }
 
 .today-highlights {
@@ -63,7 +64,7 @@ body {
 }
 
 .other-cities {
-  grid-area: 9 / 7/16 / 11;
+  grid-area: 9 / 7/ 10 / 11;
 }
 
 @media (max-width: 1024px) {
@@ -102,16 +103,70 @@ body {
 }
 
 @media (max-width: 768px) {
-  .side-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background-color: var(--secondary-color);
-    border-radius: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0;
-    z-index: 1000;
+  body {
+    padding: 0.75rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+    min-height: auto;
+  }
+
+  .search {
+    grid-area: auto;
+  }
+
+  .user {
+    grid-area: auto;
+  }
+
+  .main-weather {
+    grid-area: auto;
+    min-height: 400px;
+  }
+
+  .week-weather {
+    grid-area: auto;
+    min-height: 300px;
+  }
+
+  .today-highlights {
+    grid-area: auto;
+    min-height: 350px;
+  }
+
+  .other-cities {
+    grid-area: auto;
+    margin-bottom: 1rem;
+  }
+
+  .container > div:not(.other-cities) {
+    height: auto;
+    min-height: unset;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .container {
+    gap: 12px;
+  }
+
+  .main-weather {
+    min-height: 350px;
+  }
+
+  .week-weather {
+    min-height: 250px;
+  }
+
+  .today-highlights {
+    min-height: 300px;
   }
 }

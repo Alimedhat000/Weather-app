@@ -54,3 +54,63 @@
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
+@media (max-width: 768px) {
+  .today-highlights {
+    gap: 1.5rem;
+  }
+
+  .today-highlights > .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 1.5rem;
+  }
+
+  .today-highlights > span {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .highlight-card {
+    height: 130px;
+    padding: 15px;
+  }
+
+  .highlight-card .value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .today-highlights {
+    gap: 1rem;
+  }
+
+  .today-highlights > .cards-container {
+    padding: 1rem;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .today-highlights > span {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .highlight-card {
+    height: 110px;
+    padding: 12px;
+  }
+
+  .highlight-card .title {
+    font-size: 0.85rem;
+  }
+
+  .highlight-card .value {
+    font-size: 1.2rem;
+  }
+
+  .highlight-card .additional-info {
+    font-size: 0.75rem;
+  }
+}

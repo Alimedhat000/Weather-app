@@ -248,3 +248,50 @@
     font-size: 1.1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .week-weather {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .hour-weather-container {
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+
+  .hour-weather {
+    min-width: 60px;
+    padding: 0.5rem;
+  }
+
+  .hour {
+    font-size: 0.8rem;
+  }
+
+  .hour-temperature {
+    font-size: 1rem;
+  }
+
+  .tomorrow-overview {
+    padding: 0.75rem;
+  }
+
+  .tomorrow-weather span:first-child {
+    font-size: 0.9rem;
+  }
+
+  .tomorrow-weather span:last-child {
+    font-size: 1rem;
+  }
+
+  #tomorrow-temp {
+    font-size: 1.25rem;
+  }
+
+  #tomorrow-icon {
+    width: 50px;
+    height: 50px;
+    right: 0.75rem;
+  }
+}

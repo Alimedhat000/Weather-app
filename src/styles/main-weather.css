@@ -102,3 +102,121 @@
   font-size: 1rem;
   color: #a3b4cc;
 }
+
+@media (max-width: 768px) {
+  .main-weather {
+    flex-direction: row;
+    padding: 1.5rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 1rem;
+  }
+
+  .main-weather .left {
+    padding: 0;
+    width: 60%;
+    box-sizing: border-box;
+    align-items: flex-start;
+  }
+
+  .main-weather .right {
+    width: 40%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .main-weather #big-weather-img {
+    height: 180px;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .main-weather .weather-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-weather .temperature {
+    font-size: 3rem;
+  }
+
+  .main-weather .week-day {
+    font-size: 1.5rem;
+  }
+
+  .main-weather .country {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .main-weather #big-weather-img {
+    height: 150px;
+  }
+
+  .main-weather .weather-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-weather {
+    padding: 1rem;
+  }
+
+  .main-weather .left {
+    width: 65%;
+  }
+
+  .main-weather .right {
+    width: 35%;
+  }
+
+  .main-weather #big-weather-img {
+    height: 140px;
+    right: -15px;
+  }
+
+  .main-weather .left,
+  .main-weather .right {
+    padding: 0.5rem;
+  }
+
+  .main-weather .right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-weather .temperature {
+    font-size: 2.5rem;
+  }
+
+  .main-weather .temperature-unit {
+    font-size: 1.5rem;
+  }
+
+  .main-weather .week-day {
+    font-size: 1.25rem;
+  }
+
+  .main-weather .date {
+    font-size: 0.9rem;
+  }
+
+  .main-weather .country {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .main-weather #big-weather-img {
+    height: 120px;
+  }
+}
