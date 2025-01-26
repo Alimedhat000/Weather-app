@@ -14,11 +14,12 @@ body {
   min-height: calc(100vh - 2rem);
   padding: 0;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(15, 1fr);
+  grid-template-rows: auto;
+
   gap: 30px;
 }
 
-.container div {
+.container > div {
   background-color: var(--secondary-color);
   color: var(--white);
   border: 1px solid var(--dark-color);
@@ -32,16 +33,17 @@ body {
 }
 
 .search {
-  max-height: 50px;
   grid-area: 1 / 1 / 2 / 6;
 }
-
+.side-bar {
+  grid-area: 2 / 1 / 16 / 2;
+}
 .main-weather {
-  grid-area: 2 / 1 / 8 / 7;
+  grid-area: 2 / 2 / 9 / 7;
 }
 
 .week-weather {
-  grid-area: 8 / 1 / 16 / 7;
+  grid-area: 9 / 2 / 16 / 7;
 }
 
 .today-highlights {
@@ -52,11 +54,155 @@ body {
   grid-area: 10 / 7 / 16 / 11;
 }
 
+.main-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2233; /* Dark background color */
+  color: #ffffff; /* White text */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.main-weather .left,
+.main-weather .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-weather .left {
+  gap: 10px;
+}
+
+.main-weather .country {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c5a6ff; /* Purple for the country name */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.main-weather .today-date {
+  color: #a3b4cc;
+}
+
+.main-weather .week-day {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-weather .date {
+  font-size: 1rem;
+}
+
+.main-weather .today-weather {
+  margin-top: 10px;
+}
+
+.main-weather .temperature {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.main-weather .temperature-description {
+  font-size: 0.9rem;
+  color: #a3b4cc;
+}
+
+.main-weather .right {
+  align-items: center;
+  gap: 10px;
+}
+
+.main-weather .F-C-switch {
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(90deg, #4e5c6c 50%, #ffffff 50%);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-weather .F-C-switch::before {
+  content: "F";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.main-weather .F-C-switch::after {
+  content: "C";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: #4e5c6c;
+}
+
+#big-weather-img {
+  width: 80px;
+  height: 80px;
+}
+
+.main-weather .weather-description {
+  text-align: center;
+  color: #a3b4cc;
+}
+
+.main-weather .weather-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.main-weather .weather-feels-like {
+  font-size: 0.9rem;
+}
+
 /* Responsive Design */
-@media screen and (max-width: 1200px) {
-  /* .container {
-    grid-template-columns: 1fr;
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
+    gap: 20px;
+  }
+  .search {
+    grid-area: 1 / 1 / 2 / 7;
+  }
+  .side-bar {
+    grid-area: 2 / 1 / 10 / 2;
+  }
+  .main-weather {
+    grid-area: 2 / 2 / 6 / 7;
+  }
+  .week-weather {
+    grid-area: 6 / 2 / 10 / 7;
+  }
+  .today-highlights {
+    grid-area: 10 / 1 / 14 / 4;
+  }
+  .other-cities {
+    grid-area: 10 / 4 / 14 / 7;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+    padding-bottom: 70px; /* Add space for fixed sidebar */
   }
 
   .search,
@@ -64,11 +210,42 @@ body {
   .today-highlights,
   .week-weather,
   .other-cities {
-    grid-area: auto;  } */
-}
-@media screen and (max-width: 768px) {
-  /* .container div {    height: 150px;    border-radius: 15px;  } */
-}
-@media screen and (max-width: 375px) {
-  /* .container div {    height: 100px;    border-radius: 10px;  } */
+    grid-column: 1 / -1;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .main-weather {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .main-weather .left,
+  .main-weather .right {
+    align-items: center;
+    width: 100%;
+  }
+
+  .main-weather .temperature {
+    font-size: 2.5rem;
+  }
+
+  #big-weather-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .side-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--secondary-color);
+    border-radius: 0;
+    border-top: 1px solid var(--dark-color);
+    margin: 0;
+    z-index: 1000;
+  }
 }
