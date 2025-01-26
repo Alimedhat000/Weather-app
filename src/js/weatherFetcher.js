@@ -2,16 +2,12 @@ function formatDate(date) {
   return date.toISOString().split("T")[0]; // Returns yyyy-mm-dd
 }
 
-export async function fetchWeather(city, date) {
-  const startDate = new Date(date);
-  const endDate = new Date(date);
-  endDate.setDate(startDate.getDate() + 7);
-
+export async function fetchWeather(city) {
+  const startDate = new Date();
   const formattedStartDate = formatDate(startDate);
-  const formattedEndDate = formatDate(endDate);
   try {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=b34043427a684e529b5183719252501&q=${city}&dt=${formattedStartDate}&end_dt=${formattedEndDate}`,
+      `https://api.weatherapi.com/v1/forecast.json?key=b34043427a684e529b5183719252501&q=${city}&days=3&dt=${formattedStartDate}"`,
       {
         method: "GET",
         headers: {
