@@ -1,0 +1,185 @@
+.week-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.week-weather > span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+}
+
+.day-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0.5rem auto;
+}
+
+.temperature {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.temp-high {
+  color: #ff7e67;
+}
+
+.temp-low {
+  color: #67a5ff;
+}
+
+.hour-weather-container {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 0.5rem;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.hour-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: unset;
+  padding: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease;
+  transform-origin: bottom;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hour-weather:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.07) 100%
+  );
+}
+
+.hour {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hour-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.hour-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.hour-temperature {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tomorrow-overview {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tomorrow-overview:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.07) 100%
+  );
+}
+
+.tomorrow-overview > span:first-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tomorrow-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tomorrow-weather span:first-child {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tomorrow-weather span:last-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tomorrow-overview img {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 768px) {
+  .week-weather {
+    padding: 0.75rem;
+  }
+
+  .hour-weather-container {
+    gap: 0.5rem;
+  }
+
+  .hour-weather {
+    min-width: 70px;
+    padding: 0.5rem;
+    border-radius: 20px;
+  }
+
+  .tomorrow-overview {
+    border-radius: 20px;
+  }
+}
