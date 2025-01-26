@@ -1,0 +1,120 @@
+.user {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.user > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 50%;
+  padding: 8px 18px;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
+.user svg {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+.user svg path {
+  fill: white;
+}
+
+.username {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.user button {
+  background: none;
+  border: none;
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.user button:hover {
+  transform: translateY(2px);
+}
+
+.user button svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+}
+
+.user button:hover svg {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .user > div {
+    padding: 6px 15px;
+    width: 60%;
+  }
+
+  .username {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .user > div {
+    width: 80%;
+    padding: 6px 12px;
+  }
+
+  .user svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user {
+    grid-area: 1 / 1 / 2 / -1;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+
+  .user > div {
+    width: auto;
+    max-width: 200px;
+  }
+
+  .username {
+    font-size: 0.85rem;
+  }
+
+  .user button {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user > div {
+    padding: 5px 10px;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .user > div {
+    background: none;
+  }
+
+  .user button {
+    display: none;
+  }
+}
