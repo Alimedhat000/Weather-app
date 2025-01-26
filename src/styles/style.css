@@ -4,6 +4,8 @@
 @import "./search.css";
 @import "./user.css";
 @import "./week-weather.css";
+@import "./today-highlights.css";
+
 body {
   background-color: var(--primary-color);
   color: var(--white);
@@ -47,23 +49,21 @@ body {
 .user {
   grid-area: 1 / 8 / 2 / 11;
 }
-.side-bar {
-  grid-area: 2 / 1 / 16 / 2;
-}
+
 .main-weather {
-  grid-area: 2 / 2 / 9 / 7;
+  grid-area: 2 / 1 / 8 / 7;
 }
 
 .week-weather {
-  grid-area: 9 / 2 / 16 / 7;
+  grid-area: 8 / 1 / 16 / 7;
 }
 
 .today-highlights {
-  grid-area: 2 / 7 / 10 / 11;
+  grid-area: 2 / 7 / 9 / 11;
 }
 
 .other-cities {
-  grid-area: 10 / 7 / 16 / 11;
+  grid-area: 9 / 7/16 / 11;
 }
 
 @media (max-width: 1024px) {
@@ -78,15 +78,12 @@ body {
   .user {
     grid-area: 1 / 5 / 2 / 7;
   }
-  .side-bar {
-    grid-area: 2 / 1 / 10 / 2;
-  }
 
   .main-weather {
-    grid-area: 2 / 2 / 6 / 7;
+    grid-area: 2 / 1 / 6 / 7;
   }
   .week-weather {
-    grid-area: 6 / 2 / 10 / 7;
+    grid-area: 6 / 1 / 10 / 7;
   }
   .today-highlights {
     grid-area: 10 / 1 / 14 / 4;

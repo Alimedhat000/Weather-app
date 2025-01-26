@@ -10,7 +10,7 @@
 
 .main-weather .left,
 .main-weather .right {
-  padding: 35px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
 }

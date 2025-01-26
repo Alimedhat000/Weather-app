@@ -1,0 +1,56 @@
+.today-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: radial-gradient(
+    circle at center,
+    #101d3d 0%,
+    #0d1631 50%,
+    #0a1024 100%
+  );
+  border-radius: 20px;
+}
+.today-highlights > .cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 2.5rem;
+  padding-top: 0;
+}
+
+.today-highlights > span {
+  grid-column: 1 / -1;
+  padding: 2.5rem;
+  padding-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.highlight-card {
+  background: var(--third-color);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.highlight-card .title {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.highlight-card .value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.highlight-card .additional-info {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
