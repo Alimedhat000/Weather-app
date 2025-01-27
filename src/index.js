@@ -2,12 +2,27 @@ import "./styles/style.css";
 import { fetchWeather } from "./js/weatherFetcher";
 import { MainWeatherUpdater } from "./js/Updatemain.js";
 import { weatherDataExtractor } from "./js/weatherDataExtractor.js";
+import { HourlyWeatherUpdater } from "./js/Updatehourly.js";
+import { HighlightUpdater } from "./js/Updatehighlights.js";
 
 async function updateWeatherDisplay(city) {
   try {
     const weatherData = await fetchWeather(city);
     const extractor = new weatherDataExtractor(weatherData);
     const mainUpdater = new MainWeatherUpdater();
+    const hourlyUpdater = new HourlyWeatherUpdater();
+    const highlightUpdater = new HighlightUpdater();
+    hourlyUpdater.updateHourlyWeather(extractor.hourlyTemp);
+    hourlyUpdater.updateTommorowWeather(
+      extractor.tomorrow_temp,
+      extractor.tomorrow_weather
+    );
+    highlightUpdater.updateHighlights(
+      extractor.wind_kph,
+      extractor.uv_index,
+      extractor.humidity,
+      extractor.rain_chance
+    );
 
     await mainUpdater.updateMain(
       extractor.temp_c,

@@ -45,10 +45,7 @@ body {
 }
 
 .search {
-  grid-area: 1 / 1 / 2 / 6;
-}
-.user {
-  grid-area: 1 / 8 / 2 / 11;
+  grid-area: 1 / 4 / 2 / 8;
 }
 
 .main-weather {

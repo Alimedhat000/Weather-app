@@ -1,0 +1,68 @@
+{
+  "Blizzard.svg": "Blizzard",
+  "Blowing-snow.svg": "Blowing snow",
+  "Clear-night.svg": "Clear",
+  "Cloudy.svg": "Cloudy",
+  "Cloudy-clear at times.svg": "Cloudy-clear at times",
+  "Cloudy-clear at times-night.svg": "Cloudy-clear at times-night",
+  "Drizzle&Sun.svg": "Drizzle&Sun",
+  "Drizzle.svg": [
+    "Patchy light drizzle",
+    "Light drizzle",
+    "Freezing drizzle",
+    "Heavy freezing drizzle"
+  ],
+  "Drizzle-night.svg": "Drizzle-night",
+  "Fog.svg": ["Fog", "Freezing fog"],
+  "Hail.svg": [
+    "Ice pellets",
+    "Light showers of ice pellets",
+    "Moderate or heavy showers of ice pellets"
+  ],
+  "Heavy-rain.svg": ["Heavy rain at times", "Heavy rain"],
+  "Humidity.svg": "Humidity",
+  "Partly-cloudy.svg": "Partly cloudy",
+  "Partly-cloudy-night.svg": "Partly cloudy-night",
+  "Rain&Sun.svg": "Rain&Sun",
+  "Rain&Thunderstorm.svg": [
+    "Patchy light rain with thunder",
+    "Moderate or heavy rain with thunder"
+  ],
+  "Rain.svg": [
+    "Patchy rain possible",
+    "Light rain",
+    "Moderate rain at times",
+    "Moderate rain",
+    "Light freezing rain",
+    "Moderate or heavy freezing rain"
+  ],
+  "Rain-night.svg": "Rain-night",
+  "Scattered-showers.svg": [
+    "Light rain shower",
+    "Moderate or heavy rain shower",
+    "Torrential rain shower"
+  ],
+  "Scattered-showers-night.svg": "Scattered-showers-night",
+  "Scattered-thunderstorm.svg": "Scattered-thunderstorm",
+  "Sever-thunderstorm.svg": "Sever-thunderstorm",
+  "Sleet.svg": [
+    "Light sleet",
+    "Moderate or heavy sleet",
+    "Light sleet showers",
+    "Moderate or heavy sleet showers"
+  ],
+  "Snow.svg": [
+    "Patchy snow possible",
+    "Light snow",
+    "Patchy moderate snow",
+    "Moderate snow",
+    "Patchy heavy snow",
+    "Heavy snow",
+    "Light snow showers",
+    "Moderate or heavy snow showers",
+    "Patchy light snow with thunder",
+    "Moderate or heavy snow with thunder"
+  ],
+  "Sunny.svg": "Sunny",
+  "Wind.svg": "Wind"
+}

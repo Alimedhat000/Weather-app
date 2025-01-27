@@ -1,0 +1,62 @@
+[
+  {
+    "condition": ["Sunny", "Clear"],
+    "day": "assets/imgs/Day Sun.png",
+    "night": "assets/imgs/Night Moon.png"
+  },
+  {
+    "condition": ["Partly cloudy", "Partly Cloudy"],
+    "day": "assets/imgs/Day Clouds.png",
+    "night": "assets/imgs/Night Clouds.png"
+  },
+  {
+    "condition": ["Cloudy", "Overcast", "Mist", "Fog"],
+    "day": "assets/imgs/Day Clouds.png",
+    "night": "assets/imgs/Night Clouds.png"
+  },
+  {
+    "condition": [
+      "Patchy rain possible",
+      "Light rain",
+      "Light drizzle",
+      "Moderate rain at times",
+      "Patchy light drizzle",
+      "Light rain shower"
+    ],
+    "day": "assets/imgs/Day Rain.png",
+    "night": "assets/imgs/Night Rain.png"
+  },
+  {
+    "condition": [
+      "Moderate rain",
+      "Heavy rain",
+      "Heavy rain at times",
+      "Moderate or heavy rain shower"
+    ],
+    "day": "assets/imgs/Day Storm.png",
+    "night": "assets/imgs/Night Storm.png"
+  },
+  {
+    "condition": [
+      "Thundery outbreaks possible",
+      "Patchy light rain with thunder",
+      "Moderate or heavy rain with thunder",
+      "Thunderstorm"
+    ],
+    "day": "assets/imgs/Day Storm.png",
+    "night": "assets/imgs/Night Storm.png"
+  },
+  {
+    "condition": [
+      "Patchy snow possible",
+      "Light snow",
+      "Patchy moderate snow",
+      "Moderate snow",
+      "Patchy heavy snow",
+      "Heavy snow",
+      "Blowing snow"
+    ],
+    "day": "assets/imgs/Day Snow.png",
+    "night": "assets/imgs/Night Snow.png"
+  }
+]
