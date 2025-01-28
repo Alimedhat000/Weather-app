@@ -165,12 +165,6 @@
   justify-self: end;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
   transition: transform 0.3s ease;
-  margin-top: -15px;
-  margin-bottom: -15px;
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
   margin: 0;
 }
 
@@ -185,7 +179,7 @@
 }
 
 .tomorrow-overview:hover #tomorrow-icon {
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-5%) scale(1.1);
 }
 
 .tomorrow-overview > span:first-child {

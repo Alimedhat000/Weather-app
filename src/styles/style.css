@@ -64,6 +64,51 @@ body {
   grid-area: 9 / 7/ 10 / 11;
 }
 
+.loader {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgb(6, 12, 25, 0.5);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border: 5px solid black;
+  border-top-color: #6cc4ee;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+
+  animation: spin 0.8s linear infinite;
+}
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: repeat(6, 1fr);
