@@ -4,6 +4,7 @@ import { MainWeatherUpdater } from "./js/Updatemain.js";
 import { weatherDataExtractor } from "./js/weatherDataExtractor.js";
 import { HourlyWeatherUpdater } from "./js/Updatehourly.js";
 import { HighlightUpdater } from "./js/Updatehighlights.js";
+import { UpdateOtherCities } from "./js/Updateothercities.js";
 
 async function updateWeatherDisplay(city) {
   try {
@@ -12,6 +13,7 @@ async function updateWeatherDisplay(city) {
     const mainUpdater = new MainWeatherUpdater();
     const hourlyUpdater = new HourlyWeatherUpdater();
     const highlightUpdater = new HighlightUpdater();
+    const otherCitiesUpdater = new UpdateOtherCities();
     hourlyUpdater.updateHourlyWeather(extractor.hourlyTemp);
     hourlyUpdater.updateTommorowWeather(
       extractor.tomorrow_temp,
@@ -23,7 +25,7 @@ async function updateWeatherDisplay(city) {
       extractor.humidity,
       extractor.rain_chance
     );
-
+    await otherCitiesUpdater.updateOtherCities();
     await mainUpdater.updateMain(
       extractor.temp_c,
       extractor.condition,
@@ -40,5 +42,22 @@ async function updateWeatherDisplay(city) {
   }
 }
 
+// Add search functionality
+const searchInput = document.getElementById("search-input");
+
+searchInput.addEventListener("keypress", async (e) => {
+  if (e.key === "Enter") {
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm) {
+      try {
+        await updateWeatherDisplay(searchTerm);
+        searchInput.value = ""; // Clear the input after successful search
+      } catch (error) {
+        console.error("Search failed:", error);
+      }
+    }
+  }
+});
+
 // Initial load with default city
-updateWeatherDisplay("London");
+updateWeatherDisplay("Cairo");
