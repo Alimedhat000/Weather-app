@@ -5,7 +5,9 @@
   /* margin-top: 2.5rem; */
   padding: 0 0.5rem;
 }
-
+.other-cities span {
+  padding: 12px;
+}
 .cities-container {
   display: flex;
   justify-content: space-between;
@@ -58,7 +60,6 @@
 
 @media (max-width: 1024px) {
   .cities-container {
-    flex-direction: column;
     gap: 1rem;
   }
 
@@ -111,6 +112,9 @@
 }
 
 @media (max-width: 480px) {
+  .cities-container {
+    flex-direction: column;
+  }
   .city-temp-icon {
     width: 3rem;
   }

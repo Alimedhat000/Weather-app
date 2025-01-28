@@ -73,6 +73,7 @@ body {
   right: 0;
   z-index: 1000;
   background-color: rgb(6, 12, 25, 0.5);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   display: none;
   justify-content: center;
