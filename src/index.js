@@ -5,6 +5,10 @@ import { weatherDataExtractor } from "./js/weatherDataExtractor.js";
 import { HourlyWeatherUpdater } from "./js/Updatehourly.js";
 import { HighlightUpdater } from "./js/Updatehighlights.js";
 import { UpdateOtherCities } from "./js/Updateothercities.js";
+import {
+  fetchCitySuggestions,
+  displaySuggestions,
+} from "./js/searchSuggestion.js";
 
 const loader = document.querySelector(".loader");
 // Add loader control functions
@@ -31,6 +35,7 @@ async function updateWeatherDisplay(city) {
         extractor.tomorrow_temp,
         extractor.tomorrow_weather
       ),
+
       highlightUpdater.updateHighlights(
         extractor.wind_kph,
         extractor.uv_index,
@@ -62,6 +67,7 @@ async function updateWeatherDisplay(city) {
 
 // Add search functionality
 const searchInput = document.getElementById("search-input");
+const searchContainer = document.querySelector(".search");
 
 searchInput.addEventListener("keypress", async (e) => {
   if (e.key === "Enter") {
@@ -79,3 +85,33 @@ searchInput.addEventListener("keypress", async (e) => {
 
 // Initial load with default city
 updateWeatherDisplay("Cairo");
+
+// Add search auto complete
+// Create suggestions container
+const suggestionsContainer = document.createElement("div");
+suggestionsContainer.className = "search-suggestions";
+searchContainer.appendChild(suggestionsContainer);
+
+let debounceTimer;
+
+searchInput.addEventListener("input", async (e) => {
+  clearTimeout(debounceTimer);
+
+  debounceTimer = setTimeout(async () => {
+    const query = e.target.value.trim();
+    if (query.length < 2) {
+      suggestionsContainer.style.display = "none";
+      return;
+    }
+
+    const suggestions = await fetchCitySuggestions(query);
+    displaySuggestions(suggestions, suggestionsContainer);
+  }, 300);
+});
+
+// Close suggestions when clicking outside
+document.addEventListener("click", (e) => {
+  if (!searchContainer.contains(e.target)) {
+    suggestionsContainer.style.display = "none";
+  }
+});
