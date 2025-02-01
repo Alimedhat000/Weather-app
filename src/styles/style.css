@@ -71,7 +71,7 @@ body {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 999999;
   background-color: rgb(6, 12, 25, 0.5);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
