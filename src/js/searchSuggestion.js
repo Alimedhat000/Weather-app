@@ -14,7 +14,12 @@ export async function fetchCitySuggestions(query) {
   }
 }
 
-export function displaySuggestions(suggestions, suggestionsContainer) {
+export function displaySuggestions(
+  suggestions,
+  suggestionsContainer,
+  searchInput,
+  updateWeatherDisplay
+) {
   suggestionsContainer.innerHTML = "";
 
   if (!suggestions.length) {
@@ -31,6 +36,7 @@ export function displaySuggestions(suggestions, suggestionsContainer) {
       searchInput.value = city.name;
       updateWeatherDisplay(city.name);
       suggestionsContainer.style.display = "none";
+      searchInput.value = "";
     });
 
     suggestionsContainer.appendChild(div);

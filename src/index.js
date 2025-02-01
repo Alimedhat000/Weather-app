@@ -105,7 +105,12 @@ searchInput.addEventListener("input", async (e) => {
     }
 
     const suggestions = await fetchCitySuggestions(query);
-    displaySuggestions(suggestions, suggestionsContainer);
+    displaySuggestions(
+      suggestions,
+      suggestionsContainer,
+      searchInput,
+      updateWeatherDisplay
+    );
   }, 300);
 });
 
