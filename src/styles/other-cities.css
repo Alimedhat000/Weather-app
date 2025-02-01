@@ -62,6 +62,9 @@
   .cities-container {
     gap: 1rem;
   }
+  .cities-container {
+    flex-direction: column;
+  }
 
   .city {
     flex: 1;
@@ -112,9 +115,6 @@
 }
 
 @media (max-width: 480px) {
-  .cities-container {
-    flex-direction: column;
-  }
   .city-temp-icon {
     width: 3rem;
   }
