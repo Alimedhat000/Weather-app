@@ -234,7 +234,6 @@ export class HourlyWeatherUpdater {
       .trim()
       .toLowerCase()
       .replace(/^./, (str) => str.toUpperCase());
-    console.log(condition);
     const conditionMapping = this.conditionsMap.find((c) =>
       c.condition.includes(formattedCondition)
     );

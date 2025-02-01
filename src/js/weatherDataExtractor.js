@@ -16,7 +16,6 @@ export class weatherDataExtractor {
       WeatherData.forecast.forecastday[1].day.condition.text;
     this.tomorrow_temp = WeatherData.forecast.forecastday[1].day.avgtemp_c;
     this.hourlyTemp = this.getHourlyTemperature();
-    console.log(this.hourlyTemp);
   }
   getHourlyTemperature() {
     // Get current hour and date
